@@ -20,7 +20,7 @@
         <div class="register-card">
             <h2>Sign Up</h2>
             <p class="subtitle">Please fill in this form to create an account.</p>
-        <form action="action_page.php" autocomplete="off">
+            <form onsubmit="return registerUser();" autocomplete="off">
                 <div class="form-group">
                 <label for="dob-year">Date of Birth</label>
                 <div class="dob-selects">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="form-group">
                 <label for="user-name">User Name</label>
-                <input type="text" placeholder="Enter User Name" name="user-name" required>
+                <input type="text" placeholder="Enter User Name" name="user-name" id="user-name" required>
                 </div>
                 <div class="form-group">
                 <label for="email">Email</label>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="form-group">
                 <label for="psw">Password</label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
                 </div>
                 <div class="form-group">
                 <label for="psw-repeat">Repeat Password</label>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" placeholder="Enter Name" name="name" required>
+                <input type="text" placeholder="Enter Name" name="name"  required>
                 </div>
                 <div class="form-group">
                 <label for="Lastname">Last Name</label>
