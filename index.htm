@@ -158,8 +158,13 @@
     </div>
     </div>
 
-    <div id="game" class="screen" style="display:none;">
+    <div id="game" class="screen" style="display:none; flex-direction: column; align-items: center;">
         <h1>Game Screen</h1>
+        <div id="gameArea"></div>
+        <div id="scoreBoard">
+            <span id="score">Score: 0</span>
+            <span id="lives">Lives: 3</span>
+        </div>
         <button class="main-btn" onclick="showScreen('welcome')">Logout</button>
     </div>
     <script src="script.js"></script>
