@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f5d2d3 0%, #c2e9fb 100%);
+  box-sizing: border-box;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  width: 360px;
+  height: auto;
+  margin-bottom: 36px;
+  display: block;
+}
+
+.main-btn {
+  width: 200px;       
+  height: 64px;        
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(100, 100, 255, 0.08), 0 2px 4px rgba(252, 92, 125, 0.10);
+  transition: all 0.18s cubic-bezier(.4,2,.3,1);
+  outline: none;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.main-btn:hover, .main-btn:focus {
+  background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(100, 100, 255, 0.12), 0 4px 8px rgba(252, 92, 125, 0.15);
+}
+
+.main-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(100,100,255,0.06);
+}
+
+.register-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(70, 120, 200, 0.13), 0 1.5px 8px rgba(0,0,0,0.07);
+  padding: 38px 42px 32px 42px;
+  max-width: 400px;
+  margin: 36px auto 0 auto;
+  text-align: left;
+  transition: box-shadow 0.2s;
+}
+
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #043552;
+  font-size: 1.03rem;
+}
+.form-group input[type="dob-year"],
+.form-group input[type="dob-month"],
+.form-group input[type="dob-day"],
+.form-group input[type="text"],
+.form-group input[type="name"],
+.form-group input[type="user-name"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  padding: 12px 14px;
+  border: 1px solid #d0d7e6;
+  border-radius: 7px;
+  background: #f6f9fd;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.form-group input[type="dob-year"]:focus,
+.form-group input[type="dob-month"]:focus,
+.form-group input[type="dob-day"]:focus,
+.form-group input[type="name"]:focus,
+.form-group input[type="Lastname"]:focus,
+.form-group input[type="user-name"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  border: 1.5px solid #6a82fb;
+}
+
+.form-check {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  font-size: 0.97rem;
+}
+
+.form-check input[type="checkbox"] {
+  margin-right: 7px;
+  accent-color: #6a82fb;
+}
+
+.terms {
+  font-size: 0.95rem;
+  color: #5a5a5a;
+  margin-bottom: 24px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.terms a {
+  color: #6a82fb;
+  text-decoration: underline;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.secondary-btn {
+  width: 200px;       
+  height: 64px;        
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(100, 100, 255, 0.08), 0 2px 4px rgba(252, 92, 125, 0.10);
+  transition: all 0.18s cubic-bezier(.4,2,.3,1);
+  outline: none;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.secondary-btn:hover {
+  background: #fcfbfb;
+}
+
+
+.dob-selects {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.dob-selects select {
+  padding: 10px 12px;
+  border: 1px solid #d0d7e6;
+  border-radius: 7px;
+  background: #f6f9fd;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  min-width: 100px;
+}
+
+.dob-selects select:focus {
+  border: 1.5px solid #6a82fb;
+}
