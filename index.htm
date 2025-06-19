@@ -1,172 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> 
-    <title>Welcome</title>
+  <meta charset="UTF-8">
+  <title>Space Invaders Game</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="welcome" class="screen" style="display: flex;">
-        <h1>Welcome!</h1> 
-        <img src="logo.png" alt="Welcome Image" class="logo">
-        <button class="main-btn" onclick="showScreen('register')">Register</button>
-        <button class="main-btn" onclick="showScreen('login')">Login</button> 
-    </div>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Space Invaders</h1>
+      </div>
+      <nav>
+        <button onclick="showScreen('welcome')">Home</button>
+        <button onclick="showScreen('aboutModal',true)">About</button>
+      </nav>
+    </header>
 
-    <div id="register" class="screen" style="display:none;">
-    <h1>Register</h1>
-    <button class="main-btn" onclick="showScreen('welcome')">Back</button>
-        <div class="register-card">
-            <h2>Sign Up</h2>
-            <p class="subtitle">Please fill in this form to create an account.</p>
-            <form onsubmit="return registerUser();" autocomplete="off">
-                <div class="form-group">
-                <label for="dob-year">Date of Birth</label>
-                <div class="dob-selects">
-                    <select id="dob-year" name="dob-year" required>
-                    <option value="">Year</option>
-                    <option>2004</option>
-                    <option>2003</option>
-                    <option>2002</option>
-                    <option>2001</option>
-                    <option>2000</option>
-                    <option>1999</option>
-                    <option>1998</option>
-                    <option>1997</option>
-                    <option>1996</option>
-                    <option>1995</option>
-                    <option>1994</option>
-                    </select>
-                    <select id="dob-month" name="dob-month" required>
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                    </select>
-                    <select id="dob-day" name="dob-day" required>
-                    <option value="">Day</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                    <option>27</option>
-                    <option>28</option>
-                    <option>29</option>
-                    <option>30</option>
-                    <option>31</option>
-                    </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                <label for="user-name">User Name</label>
-                <input type="text" placeholder="Enter User Name" name="user-name" id="user-name" required>
-                </div>
-                <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" placeholder="Enter Email" name="email" required>
-                </div>
-                <div class="form-group">
-                <label for="psw">Password</label>
-                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-                </div>
-                <div class="form-group">
-                <label for="psw-repeat">Repeat Password</label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                </div>
-                <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" placeholder="Enter Name" name="name"  required>
-                </div>
-                <div class="form-group">
-                <label for="Lastname">Last Name</label>
-                <input type="text" placeholder="Enter Last Name" name="Lastname" required>
-                </div>
-                <div class="form-check">
-                <input type="checkbox" checked="checked" name="remember" id="remember">
-                <label for="remember">Remember me</label>
-                </div>
-                <p class="terms">By creating an account you agree to our 
-                <a href="#">Terms &amp; Privacy</a>.
-                </p>
-                <div class="btn-group">
-                <button type="button" class="secondary-btn" onclick="showScreen('welcome')">Cancel</button>
-                <button type="submit" class="main-btn">Sign Up</button>
-                </div>
-                
-            </div>
-
-        </form>
-    </div>
-
-    <div id="login" class="screen" style="display:none;">
-    <div class="login-card">
-        <h2>Sign In</h2>
-        <p class="subtitle">Welcome! Please enter your details.</p>
-        <form action="login_action.php" autocomplete="off" onsubmit="loginUser(); return false;">
-            <div class="form-group">
-                <label for="login-username">User Name</label>
-                <input type="text" id="user-name" name="user-name" placeholder="Enter User Name" required>
-            </div>
-            <div class="form-group">
-                <label for="login-password">Password</label>
-                <input type="password" id="login-password" name="login-password" placeholder="Enter Password" required>
-            </div>
-            <div class="form-options">
-                <label class="remember-label">
-                    <input type="checkbox" name="remember" checked>
-                    Remember me
-                </label>
-                <a href="#" class="forgot-link">Forgot Password?</a>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="secondary-btn" onclick="showScreen('welcome')">Back</button>
-                <button type="submit" class="main-btn">Login</button>
-            </div>
-        </form>
-    </div>
-    </div>
-
-    <div id="game" class="screen" style="display:none; flex-direction: column; align-items: center;">
-        <h1>Game Screen</h1>
-        <div id="gameArea"></div>
-        <div id="scoreBoard">
-            <span id="score">Score: 0</span>
-            <span id="lives">Lives: 3</span>
+    <main>
+      
+      <div id="welcome" class="screen">
+        <h2>Welcome!</h2>
+        <img src="logo.png" alt="Logo" class="big-logo">
+        <div class="actions">
+          <button onclick="showScreen('register')">Register</button>
+          <button onclick="showScreen('login')">Login</button>
         </div>
-        <button class="main-btn" onclick="showScreen('welcome')">Logout</button>
+      </div>
+
+    
+      <div id="register" class="screen">
+        <h2>Register</h2>
+        <form id="registerForm" autocomplete="off">
+          <input type="text" id="reg-username" placeholder="Username" required>
+          <input type="password" id="reg-password" placeholder="Password" required>
+          <input type="password" id="reg-confirm" placeholder="Confirm Password" required>
+          <input type="text" id="reg-firstname" placeholder="First Name" required>
+          <input type="text" id="reg-lastname" placeholder="Last Name" required>
+          <input type="email" id="reg-email" placeholder="Email" required>
+          <div class="dob">
+            <select id="reg-year" required></select>
+            <select id="reg-month" required></select>
+            <select id="reg-day" required></select>
+          </div>
+          <button type="submit">Sign Up</button>
+          <button type="button" onclick="showScreen('welcome')">Back</button>
+        </form>
+        <div id="register-error" class="error"></div>
+      </div>
+
+      
+      <div id="login" class="screen">
+        <h2>Login</h2>
+        <form id="loginForm" autocomplete="off">
+          <input type="text" id="login-username" placeholder="Username" required>
+          <input type="password" id="login-password" placeholder="Password" required>
+          <button type="submit">Login</button>
+          <button type="button" onclick="showScreen('welcome')">Back</button>
+        </form>
+        <div id="login-error" class="error"></div>
+      </div>
+
+      
+      <div id="config" class="screen">
+        <h2>Game Configuration</h2>
+        <form id="configForm">
+            <label>
+            Shooting Key:
+            <select id="config-shootkey"></select>
+            </label>
+            <label>
+            Game Duration (min 2 min):
+            <input type="number" id="config-duration" min="2" max="10" value="2">
+            </label>
+            <label>
+            Player Color:
+            <input type="color" id="config-playerColor" value="#00aaff">
+            </label>
+            <label>
+            Enemy Color:
+            <input type="color" id="config-enemyColor" value="#ff9900">
+            </label>
+            <button type="button" onclick="startGame()">Start Game</button>
+            <button type="button" onclick="showScreen('welcome')">Back</button>
+        </form>
     </div>
-    <script src="script.js"></script>
+
+      <!-- Game Screen -->
+      <div id="game" class="screen">
+        <div class="game-topbar">
+          <span id="score">Score: 0</span>
+          <span id="lives">Lives: 3</span>
+          <span id="timer">Time: 00:00</span>
+        </div>
+        <canvas id="game-canvas" width="1200" height="600"></canvas>
+        <div class="game-buttons">
+          <button onclick="newGame()">New Game</button>
+          <button onclick="showScreen('config')">Config</button>
+        </div>
+      </div>
+
+      <!-- End Game Screen -->
+      <div id="endgame" class="screen">
+        <h2 id="endgame-title"></h2>
+        <p id="endgame-score"></p>
+        <div id="highscores"></div>
+        <button onclick="showScreen('config')">Play Again</button>
+        <button onclick="showScreen('welcome')">Home</button>
+      </div>
+    </main>
+
+    <footer>
+      <span>Space Invaders © 2025 | Contact: shonpl@post.bgu.ac.il</span>
+    </footer>
+  </div>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal-bg" onclick="closeAbout(event)">
+    <div class="modal" tabindex="-1">
+      <button class="close-btn" onclick="hideAboutModal()">×</button>
+      <h2>About</h2>
+      <ul>
+        <li>Authors: Shon Platok & Niv Sampson</li>
+        <li>No template/plugins used</li>
+        <li>Main difficulties: canvas timing & user validation</li>
+        <li>Extra: diagonal movement, sound effects, score table</li>
+      </ul>
+      <h3>Game Instructions</h3>
+      <ul>
+        <li>Move: Arrow keys (within lower 40% of screen)</li>
+        <li>Shoot: Your chosen key</li>
+        <li>Destroy all enemy ships to win</li>
+        <li>Each hit gives you points, more for upper rows</li>
+        <li>3 lives only. Game speeds up every 5s (max 4 times)</li>
+        <li>New game = resets score, table keeps your history</li>
+      </ul>
+    </div>
+  </div>
+  <audio id="bg-music" src="song.mp3" loop></audio>
+  
 </body>
+<script src="script.js"></script>
 </html>
